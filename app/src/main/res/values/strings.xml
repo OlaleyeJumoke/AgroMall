@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">AgroMall</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="company_logo">Company Logo</string>
+    <string name="login_button">Login Button</string>
+    <string name="log_in">LOG IN</string>
+    <string name="next">Next</string>
+    <string name="create_an_account">Create An Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="home_address">Home Address</string>
+    <string name="title_activity_home">Home</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="farm_name">Farm Name</string>
+    <string name="farm_coordinates">Farm Coordinates</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="choose_location">Choose location On the map</string>
+    <string name="farm_map">Farm Map</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="upload">Upload a profile picture</string>
+    <string name="farm_details">Farm Details</string>
+    <string name="back_arrow">Back Arrow</string>
+    <string name="profile_picture_container">Profile picture Container</string>
+    <string name="image_button">Image button</string>
 </resources>
