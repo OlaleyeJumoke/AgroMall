@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
-        <activity android:name=".RegisterFarmer3"/>
-        <activity android:name=".RegisterFarmer2"/>
-        <activity android:name=".RegisterFarmer1" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".views.RegisterFarmer3" />
+        <activity android:name=".views.RegisterFarmer2" />
+        <activity android:name=".views.RegisterFarmer1" />
+        <activity android:name=".views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

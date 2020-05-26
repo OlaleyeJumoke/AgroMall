@@ -1,148 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".RegisterFarmer1">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_margin="32dp"
-        android:background="@drawable/button_design"
-        android:contentDescription="@string/login_button"
-        android:fontFamily="@font/lato_regular"
-        android:text="@string/next"
-        android:textColor="#ffffff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/gender" />
+    <data>
+        <variable
+            name="viewModel"
+            type="com.agro.agromall.viewmodels.VMRegisterFarmer1"/>
+    </data>
 
-    <EditText
-        android:id="@+id/name"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        android:autofillHints=""
-        android:background="@drawable/edit_text_design_states"
-        android:drawableStart="@drawable/user"
-        android:drawablePadding="8dp"
-        android:fontFamily="@font/lato_regular"
-        android:hint="@string/full_name"
-        android:inputType="text"
-        android:maxLines="1"
-        android:paddingStart="16dp"
-        android:paddingEnd="8dp"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text" />
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:context=".views.RegisterFarmer1">
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        android:layout_marginTop="32dp"
-        android:autofillHints=""
-        android:background="@drawable/edit_text_design_states"
-        android:drawableStart="@drawable/email"
-        android:drawablePadding="8dp"
-        android:fontFamily="@font/lato_regular"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:paddingStart="16dp"
-        android:paddingEnd="8dp"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name" />
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_margin="32dp"
+            android:background="@drawable/button_design"
+            android:contentDescription="@string/login_button"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/next"
+            android:textColor="#ffffff"
+            bind:toastMessage="@{viewModel.toastMessage}"
+            android:onClick="@{()->viewModel.onRegister1Clicked()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gender" />
 
-    <EditText
-        android:id="@+id/phone_number"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        android:layout_marginTop="32dp"
-        android:autofillHints=""
-        android:background="@drawable/edit_text_design_states"
-        android:drawableStart="@drawable/phone"
-        android:drawablePadding="8dp"
-        android:fontFamily="@font/lato_regular"
-        android:hint="@string/phone_number"
-        android:inputType="phone"
-        android:paddingStart="16dp"
-        android:paddingEnd="8dp"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            android:autofillHints=""
+            android:afterTextChanged="@{(editable)->viewModel.afterFullNameTextChanged(editable)}"
+            android:background="@drawable/edit_text_design_states"
+            android:drawableStart="@drawable/user"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/lato_regular"
+            android:hint="@string/full_name"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text" />
 
-    <EditText
-        android:id="@+id/address"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="16dp"
-        android:layout_marginTop="32dp"
-        android:autofillHints=""
-        android:background="@drawable/edit_text_design_states"
-        android:drawableStart="@drawable/lock"
-        android:drawablePadding="8dp"
-        android:fontFamily="@font/lato_regular"
-        android:hint="@string/home_address"
-        android:inputType="text"
-        android:paddingStart="16dp"
-        android:paddingEnd="8dp"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/phone_number" />
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            android:layout_marginTop="32dp"
+            android:autofillHints=""
+            android:afterTextChanged="@{(editable)->viewModel.afterEmailTextChanged(editable)}"
+            android:background="@drawable/edit_text_design_states"
+            android:drawableStart="@drawable/email"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/lato_regular"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name" />
 
-    <ImageView
-        android:id="@+id/Logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:background="@drawable/logo"
-        android:contentDescription="@string/company_logo"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            android:layout_marginTop="32dp"
+            android:autofillHints=""
+            android:background="@drawable/edit_text_design_states"
+            android:drawableStart="@drawable/phone"
+            android:drawablePadding="8dp"
+            android:afterTextChanged="@{(editable)->viewModel.afterPhoneNumberChanged(editable)}"
+            android:fontFamily="@font/lato_regular"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email" />
 
-    <Spinner
-        android:id="@+id/gender"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/address"/>
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:layout_marginTop="32dp"
+            android:autofillHints=""
+            android:background="@drawable/edit_text_design_states"
+            android:drawableStart="@drawable/lock"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/lato_regular"
+            android:hint="@string/home_address"
+            android:inputType="text"
+            android:afterTextChanged="@{(editable)->viewModel.afterPhoneNumberChanged(editable)}"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phone_number" />
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
-        android:background="@android:color/transparent"
-        android:fontFamily="@font/lato_bold"
-        android:text="@string/create_an_account"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
-        android:textSize="24sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Logo" />
+        <ImageView
+            android:id="@+id/Logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:background="@drawable/logo"
+            android:contentDescription="@string/company_logo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="58dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/create_an_account"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Logo" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

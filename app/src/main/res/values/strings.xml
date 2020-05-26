@@ -33,4 +33,5 @@
     <string name="back_arrow">Back Arrow</string>
     <string name="profile_picture_container">Profile picture Container</string>
     <string name="image_button">Image button</string>
+    <string name="farm_address">Farm Address</string>
 </resources>
