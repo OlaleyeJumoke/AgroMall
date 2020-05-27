@@ -1,10 +1,17 @@
 package com.agro.agromall.viewmodels;
 
+import android.text.TextUtils;
+import android.util.Patterns;
+import android.view.View;
+
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 
 import com.agro.agromall.BR;
+import com.agro.agromall.SQLiteHandler;
 import com.agro.agromall.models.MRegisterFarmer3;
+
+import java.util.Date;
 
 public class VMRegisterFarmer3 extends BaseObservable {
     private MRegisterFarmer3 registerFarmer3;
@@ -49,9 +56,10 @@ public class VMRegisterFarmer3 extends BaseObservable {
     }
 
     public void onRegister3Clicked() {
-        if (registerFarmer3.isInputDataValid())
+
+       /* if (registerFarmer3.isInputDataValid())
             setToastMessage(successMessage);
         else
-            setToastMessage(errorMessage);
+            setToastMessage(errorMessage);*/
     }
 }

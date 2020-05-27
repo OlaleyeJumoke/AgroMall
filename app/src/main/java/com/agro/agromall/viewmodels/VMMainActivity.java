@@ -20,7 +20,7 @@ public class VMMainActivity extends BaseObservable {
     private String errorMessage = "Email or Password not valid";
 
     @Bindable
-    private String toastMessage = null;
+    private String toastMessage= null;
 
 
     public String getToastMessage() {

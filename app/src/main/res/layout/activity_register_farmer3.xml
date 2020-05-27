@@ -26,7 +26,7 @@
             android:fontFamily="@font/lato_bold"
             android:text="@string/sign_up"
             android:textColor="#ffffff"
-            android:onClick="@{()->viewModel.onRegister3Clicked()}"
+            android:onClick="@{(v)->viewModel.onRegister3Clicked(v)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.568"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -155,7 +155,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
-                android:background="@drawable/arrowright"
+                android:background="@drawable/ic_arrow_right"
                 android:contentDescription="@string/back_arrow"
                 android:paddingStart="16dp"
                 android:paddingEnd="8dp" />

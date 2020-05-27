@@ -37,7 +37,8 @@ public class User {
     }
 
     public boolean isInputDataValid() {
-        return !TextUtils.isEmpty(getEmail()) && Patterns.EMAIL_ADDRESS.matcher(getEmail()).matches() && getPassword().length() > 5;
+        return !TextUtils.isEmpty(getEmail()) && Patterns.EMAIL_ADDRESS.matcher(getEmail()).matches()
+                && getEmail().equals("test@theagromall.com") && getPassword().equals("password");
     }
 
 }

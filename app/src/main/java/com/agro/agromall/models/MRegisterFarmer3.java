@@ -5,6 +5,8 @@ import android.util.Patterns;
 
 import androidx.annotation.NonNull;
 
+import java.util.Date;
+
 public class MRegisterFarmer3 {
     @NonNull
     private String mFarmName;
@@ -58,9 +60,12 @@ public class MRegisterFarmer3 {
         mLatitude = latitude;
     }
 
-    public boolean isInputDataValid() {
-        return !TextUtils.isEmpty(getFarmName())
-                && !TextUtils.isEmpty(getFarmAddress())  && !TextUtils.isEmpty(getLongitude()) && !TextUtils.isEmpty(getLatitude());
-    }
+    /*public boolean isInputDataValid() {
+        if(!TextUtils.isEmpty(getFarmName())
+                && !TextUtils.isEmpty(getFarmAddress())  && !TextUtils.isEmpty(getLongitude())
+                && !TextUtils.isEmpty(getLatitude())){
+            sqLiteHandler.addFarmer1(getFullName(),getEmail(),getUid(),getPhoneNumber(),getHomeAddress(), new Date().toString());
+        }
+    }*/
 
 }

@@ -1,11 +1,9 @@
 package com.agro.agromall.models;
 
-import android.text.TextUtils;
-import android.util.Patterns;
-
 import androidx.annotation.NonNull;
 
 public class MRegisterFarmer1 {
+
     @NonNull
     private String mFullName;
     @NonNull
@@ -14,6 +12,10 @@ public class MRegisterFarmer1 {
     private String mPhoneNumber;
     @NonNull
     private String mHomeAddress;
+    @NonNull
+    private String Uid;
+
+
 
     public MRegisterFarmer1(@NonNull final String full_name, @NonNull final String email, @NonNull final String phone_number, @NonNull final String home_address) {
         mFullName = full_name;
@@ -21,6 +23,13 @@ public class MRegisterFarmer1 {
         mPhoneNumber = phone_number;
         mHomeAddress = home_address;
     }
+    @NonNull
+    public String getUid() {
+        int uid = (int)(Math.random());
+        Uid = String.valueOf(uid);
+        return Uid;
+    }
+
 
     @NonNull
     public String getEmail() {
@@ -58,9 +67,5 @@ public class MRegisterFarmer1 {
         mHomeAddress = home_address;
     }
 
-    public boolean isInputDataValid() {
-        return !TextUtils.isEmpty(getEmail()) && Patterns.EMAIL_ADDRESS.matcher(getEmail()).matches()
-                && getFullName().length() > 5 && !TextUtils.isEmpty(getPhoneNumber()) && !TextUtils.isEmpty(getHomeAddress());
-    }
 
 }
